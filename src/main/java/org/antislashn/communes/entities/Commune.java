@@ -20,9 +20,9 @@ import javax.persistence.Table;
 		@NamedQuery(name = "Commune.byCodePostal",
 					query = "SELECT c FROM Commune c WHERE UPPER(c.codePostal) LIKE :codePostal"),
 		@NamedQuery(name = "Commune.byDepartement",
-				query = "SELECT c FROM Commune c WHERE UPPER(c.departement.nom) LIKE :nom"),
+				query = "SELECT c FROM Commune c WHERE UPPER(c.departement.nom) = :nom"),
 		@NamedQuery(name = "Commune.byRegion",
-				query = "SELECT c FROM Commune c WHERE UPPER(c.departement.region.nom) LIKE :nom")
+				query = "SELECT c FROM Commune c WHERE UPPER(c.departement.region.nom) = :nom")
 })
 public class Commune {
 	@Id
