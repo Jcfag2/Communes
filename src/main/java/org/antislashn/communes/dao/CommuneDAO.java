@@ -1,6 +1,8 @@
 package org.antislashn.communes.dao;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -23,6 +25,13 @@ public class CommuneDAO extends AbstractDAO<Commune, Long>{
 	
 	public List<Commune> getCommunesByRegion(String region){
 		return getCommunes("Commune.byRegion","nom", region.toUpperCase());
+	}
+	
+	public List<String> getAllRegions(){
+		EntityManager em = getEntityManagerFactory().createEntityManager();
+		List<String> regions = em.createNamedQuery("Region.all",String.class).getResultList();
+		em.close();
+		return regions;
 	}
 	
 	private List<Commune> getCommunes(String namedQuery,String paramName, String paramValue){
