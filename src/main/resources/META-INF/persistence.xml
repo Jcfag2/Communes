@@ -8,8 +8,8 @@
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"	value="jdbc:mysql://localhost:3306/communes-france?serverTimezone=UTC" />
-			<property name="javax.persistence.jdbc.user" value="user" />
-			<property name="javax.persistence.jdbc.password" value="userpw" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="P@ssw0rd" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
 			<property name="javax.persistence.schema-generation.database.action" value="none" />
 			<property name="hibernate.show_sql" value="true"/>

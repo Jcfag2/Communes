@@ -45,6 +45,14 @@ public class TestCommuneDAO {
 	}
 	
 	@Test
+	public void testAllDepartements() {
+		CommuneDAO dao = new CommuneDAO(emf);
+		List<String> departements = dao.getAllDepartement();
+		assertNotNull(departements);
+		assertTrue(departements.size()==109);
+	}
+	
+	@Test
 	public void testGetByDepartement() {
 		CommuneDAO dao = new CommuneDAO(emf);
 		List<Commune> communes = dao.getCommunesByDepartement("Ain");
