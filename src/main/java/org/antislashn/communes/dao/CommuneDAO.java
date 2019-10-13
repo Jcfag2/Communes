@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 import org.antislashn.communes.entities.Commune;
+import org.antislashn.communes.entities.Departement;
 
 public class CommuneDAO extends AbstractDAO<Commune, Long>{
 
@@ -32,9 +33,9 @@ public class CommuneDAO extends AbstractDAO<Commune, Long>{
 		return regions;
 	}
 	
-	public List<String> getAllDepartement(){
+	public List<Departement> getAllDepartement(){
 		EntityManager em = getEntityManagerFactory().createEntityManager();
-		List<String> departements = em.createNamedQuery("Departement.all",String.class).getResultList();
+		List<Departement> departements = em.createNamedQuery("Departement.all",Departement.class).getResultList();
 		em.close();
 		return departements;
 	}

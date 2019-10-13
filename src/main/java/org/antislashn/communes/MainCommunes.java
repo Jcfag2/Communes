@@ -7,6 +7,7 @@ import javax.persistence.Persistence;
 
 import org.antislashn.communes.Constantes;
 import org.antislashn.communes.dao.CommuneDAO;
+import org.antislashn.communes.entities.Departement;
 
 public class MainCommunes {
 
@@ -16,7 +17,7 @@ public class MainCommunes {
 		
 //		List<Commune> communes = dao.getCommunesByCodePostal("972");
 //		communes.forEach(System.out::println);
-		List<String> departements = dao.getAllDepartement();
+		List<Departement> departements = dao.getAllDepartement();
 		departements.forEach(System.out::println);
 		emf.close();
 	}

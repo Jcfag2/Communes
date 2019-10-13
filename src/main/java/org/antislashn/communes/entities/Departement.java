@@ -12,16 +12,18 @@ import javax.persistence.Table;
 @Entity
 @Table(name="departments")
 @NamedQueries({
-	@NamedQuery(name="Departement.all", query = "SELECT d.nom FROM Departement d")
+	@NamedQuery(name="Departement.all", query = "SELECT d FROM Departement d")
 })
 public class Departement {
 	@Id
-	private String code;
+	private long id;
 	@Column(name="name")
 	private String nom;
 	@ManyToOne
 	@JoinColumn(name="region_code")
 	private Region region;
+	@Column(name="code")
+	private String numDep;
 	
 	public String getNom() {
 		return nom;
@@ -29,5 +31,11 @@ public class Departement {
 	public Region getRegion() {
 		return region;
 	}
+	@Override
+	public String toString() {
+		return numDep + " " + nom;
+	}
 
+	
+	
 }

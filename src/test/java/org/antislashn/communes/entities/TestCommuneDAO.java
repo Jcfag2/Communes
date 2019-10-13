@@ -47,7 +47,7 @@ public class TestCommuneDAO {
 	@Test
 	public void testAllDepartements() {
 		CommuneDAO dao = new CommuneDAO(emf);
-		List<String> departements = dao.getAllDepartement();
+		List<Departement> departements = dao.getAllDepartement();
 		assertNotNull(departements);
 		assertTrue(departements.size()==109);
 	}
